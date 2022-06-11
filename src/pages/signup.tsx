@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
-import SignupForm from "../components/signup-page/SignupForm"
-import PageHeading from "../components/PageHeading"
+import SignupForm from "./components/signup-page/SignupForm"
+import PageHeading from "./components/PageHeading"
 
 const Signup: NextPage = () => {
   return (

@@ -1,14 +1,23 @@
 import { useState } from "react"
 import { LabelAndInput } from "../Form"
 import Button from "../Button"
+import { postFormData } from "../../utils/postFormData"
 
 const SignupForm = () => {
   const [username, setUsername] = useState("")
   const [password1, setPassword1] = useState("")
   const [password2, setPassword2] = useState("")
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const formData = { username, password1, password2 };
+    const { response, result } = await postFormData(formData, '/api/signup');
+
+    console.log({ response, result });
+  };
 
   return (
-    <form className="w-full sm:w-96">
+    <form className="w-full sm:w-96" onSubmit={handleSubmit}>
       <LabelAndInput
         label="Username"
         inputType="text"
