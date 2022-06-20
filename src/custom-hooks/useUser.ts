@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { harperGetUsername } from "../utils/harperdb/getUsername"
+import { harperGetUsername } from "../pages/utils/harperdb/getUsername"
 
 export const useUser = () => {
   const [username, setUsername] = useState("")
